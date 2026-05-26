@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Le Marche - Premium Gourmet Design System */
+:root {
+    /* Brand Colors - Luxury Indian Gourmet */
+    --brand-primary: #A3B18A;
+    --brand-secondary: #DAD7CD;
+    --background-base: #0A0A0A;
+    --surface-card: #121411;
+    --surface-elevated: #1B1E17;
+    --text-primary: #FFFFFF;
+    --text-secondary: #DAD7CD;
+    --border-subtle: rgba(163, 177, 138, 0.2);
+    --accent-warm: #D4A373;
+    --error: #993333;
+    
+    /* Light mode variables */
+    --background: 40 30% 96%;
+    --foreground: 40 10% 10%;
+    --card: 40 25% 98%;
+    --card-foreground: 40 10% 10%;
+    --popover: 40 25% 98%;
+    --popover-foreground: 40 10% 10%;
+    --primary: 90 25% 55%;
+    --primary-foreground: 40 10% 10%;
+    --secondary: 40 20% 90%;
+    --secondary-foreground: 40 10% 15%;
+    --muted: 40 15% 90%;
+    --muted-foreground: 40 10% 45%;
+    --accent: 30 35% 60%;
+    --accent-foreground: 40 10% 10%;
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 90 25% 55%;
+    --radius: 0.25rem;
+}
+
+.dark {
+    --background: 60 10% 4%;
+    --foreground: 0 0% 100%;
+    --card: 70 10% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 70 10% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 90 25% 63%;
+    --primary-foreground: 60 10% 4%;
+    --secondary: 70 8% 11%;
+    --secondary-foreground: 40 20% 86%;
+    --muted: 70 8% 11%;
+    --muted-foreground: 40 15% 70%;
+    --accent: 30 35% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 90 25% 63% / 0.2;
+    --input: 90 25% 63% / 0.3;
+    --ring: 90 25% 63%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+}
+
+/* Selection styling */
+::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    /* Glassmorphism effect for navbar */
+    .glass {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+    
+    /* Premium card hover effect */
+    .card-hover {
+        @apply transition-all duration-300 ease-in-out;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Overline text style */
+    .overline {
+        @apply text-xs font-semibold tracking-[0.2em] uppercase;
+        color: hsl(var(--primary));
+    }
+    
+    /* Image hover zoom effect */
+    .img-zoom {
+        @apply overflow-hidden;
+    }
+    
+    .img-zoom img {
+        @apply transition-transform duration-700 ease-out;
+    }
+    
+    .img-zoom:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Debug wrapper fix */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}

@@ -1,0 +1,75 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 1: Organic & Earthy (Luxury Indian Gourmet)",
+  "design_philosophy": "Sensory, High-end, Authentic. Uses dramatic lighting, earthy olive greens and creams against a deep obsidian background to create a cinematic, premium grocery experience. Inspired by 'Le Marche'.",
+  "colors": {
+    "brand_primary": "#A3B18A",
+    "brand_secondary": "#DAD7CD",
+    "background_base": "#0A0A0A",
+    "surface_card": "#121411",
+    "surface_elevated": "#1B1E17",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#DAD7CD",
+    "border_subtle": "rgba(163, 177, 138, 0.2)",
+    "accent_warm": "#D4A373",
+    "error": "#993333"
+  },
+  "typography": {
+    "font_heading": "Cormorant Garamond",
+    "font_body": "Outfit",
+    "font_mono": "JetBrains Mono",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tighter",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight",
+    "h3": "text-xl sm:text-2xl font-normal",
+    "body_large": "text-lg leading-relaxed",
+    "body_base": "text-base leading-relaxed text-[#DAD7CD]",
+    "overline": "text-xs font-semibold tracking-[0.2em] uppercase text-[#A3B18A]"
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_gap": "py-24",
+    "grid_gap": "gap-8 lg:gap-12",
+    "radius_default": "rounded-sm",
+    "radius_large": "rounded-md"
+  },
+  "components_strategy": {
+    "navbar": "Glassmorphism variant: backdrop-blur-xl bg-[#0A0A0A]/70 border-b border-[#A3B18A]/20. Links must use Outfit, visible on desktop.",
+    "hero_section": "Max height 80vh. Use provided hero image with bg-black/50 overlay. Text left-aligned: small uppercase overline, massive H1, and solid olive CTA.",
+    "product_card": "Cardless design or ultra-subtle 1px border. Image 80% of card, text details (title, price) below. Hover: image scale up 1.05x, parent gets subtle inner shadow.",
+    "bento_categories": "Asymmetric bento grid for categories (Imported, Organic, Bakery, etc.). Mix col-span-2 and col-span-1.",
+    "buttons": "Primary: bg-[#A3B18A] text-[#0A0A0A] font-medium hover:bg-[#DAD7CD] transition-colors. Secondary: border border-[#A3B18A]/50 text-[#DAD7CD] hover:border-[#A3B18A].",
+    "inputs_forms": "Shadcn based. bg-[#121411] border-[#A3B18A]/30 focus:border-[#A3B18A] focus:ring-1 focus:ring-[#A3B18A].",
+    "footer": "Dark background #050505. Massive padding py-32. Huge brand typography at the bottom.",
+    "data_attributes": "All interactive elements must have data-testid (e.g., data-testid='add-to-cart-btn')."
+  },
+  "media_assets": {
+    "hero_banner": "https://images.unsplash.com/photo-1655522060985-6769176edff7",
+    "categories": {
+      "organic_vegetables": "https://images.unsplash.com/photo-1764587492405-550cc80ec939",
+      "bakery": "https://images.unsplash.com/photo-1759749597913-98abd8b3127d",
+      "imported_wines_oils": "https://images.pexels.com/photos/7101917/pexels-photo-7101917.jpeg",
+      "store_interior": "https://images.pexels.com/photos/7670333/pexels-photo-7670333.jpeg"
+    },
+    "products_placeholders": [
+      "https://images.unsplash.com/photo-1758221055853-479a0de23e66",
+      "https://images.unsplash.com/photo-1769424052131-9044fece031e",
+      "https://images.pexels.com/photos/915001/pexels-photo-915001.jpeg",
+      "https://images.unsplash.com/photo-1710750483431-d8eb4312d971"
+    ]
+  },
+  "motion_and_effects": {
+    "hover_state": "transition-all duration-300 ease-in-out",
+    "image_hover": "hover:scale-105 transition-transform duration-700 ease-out",
+    "page_transition": "animate-in fade-in duration-500"
+  },
+  "instructions_to_main_agent": [
+    "CRITICAL: Do not use default Inter or Roboto fonts. Import and use Cormorant Garamond for headings and Outfit for body.",
+    "CRITICAL: Adhere to the provided dark color palette (olive greens, creams, deep blacks). Do not use pure #000000; use #0A0A0A.",
+    "CRITICAL: All images must be implemented using the URLs from the media_assets section. Do not use generic placeholders like via.placeholder.com.",
+    "CRITICAL: Ensure every interactive button, link, and input has a unique data-testid.",
+    "Use Shadcn UI for standard components but override the default styles (border-radius, colors) to match the luxury, editorial aesthetic outlined here.",
+    "Implement 'Glassmorphism' on the sticky navbar, ensuring text contrast is maintained.",
+    "Layouts should breathe. Use p-12 or p-16 paddings. Avoid cramped designs.",
+    "No hamburger menus on desktop; show full navigation links."
+  ]
+}

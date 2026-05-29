@@ -34,6 +34,7 @@ mongo_url = os.environ.get('MONGO_URL', 'NOT_SET')
 if mongo_url == 'NOT_SET':
     print("ERROR: MONGO_URL not found in environment!", flush=True)
 client = AsyncIOMotorClient(mongo_url)
+db = client["le_marche"]
 
 # JWT Configuration
 JWT_SECRET = os.environ.get('JWT_SECRET', 'le-marche-secret-key-2024')
